@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@import "bourbon/bourbon.scss";
+@import "partials/mixins";
+@import "partials/variables";
+
+@import "partials/text_styles";
+
+@import "partials/footer";
+@import "partials/index";
+@import "partials/portfolio_page";
+@import "partials/about.scss";
+@import "partials/blog.scss";
+@import "partials/search_results.scss";
+@import "partials/404_page.scss"; 
+@import "partials/no_js.scss"; 

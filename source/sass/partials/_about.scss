@@ -1,0 +1,156 @@
+/*
+.hero-art-resume
+	{
+	width:100%;
+	max-width:1300px;
+	padding:0 0 40%;
+	margin:0;
+	background-image:url('../siteart/cruxbg_inside.png');
+	background-attachment:fixed;
+	background-size:100% auto;
+	background-position:center 60px;
+	background-repeat:no-repeat;
+	position:relative;
+	overflow:hidden;
+	min-height:300px;
+	
+		@media screen and (max-width:em(500)) 
+		{
+		background-size:500px auto;
+		background-position:center 50px;	
+		}	
+	}
+*/
+
+.resume_container
+	{
+	@extend .teaser-module-container;
+	padding-top:20px;
+	width:100%;
+	max-width:950px;
+	margin:0 auto;
+	
+		p
+		{
+		font-size:em(15);
+		line-height:150%;
+		
+				@media screen and (max-width:em(500)) 
+				{
+				font-size:em(14);
+				line-height:150%;
+				}
+		
+		}
+	
+	}	
+	
+.resume-section
+	{
+	margin:0 0 60px 0;
+	display:block;
+	float:none;
+	}
+	
+.resume-section-header
+	{
+	@extend .section-header;
+	font-size:em(30);
+	transition:font-size .3s;
+	
+	@media screen and (max-width:em(500)) 
+	{
+	font-size:em(22);
+	}
+	
+	}
+	
+	
+.resume-info-line
+	{
+	font-style:italic;
+	text-align:center;
+	margin:0 0 20px 0;
+	}	
+	
+	
+.resume-subheader
+	{
+	font-family:$sans;
+	font-size:em(18);
+	font-weight:700;
+	margin:30px 0 15px 0;
+	padding:0 0 10px 0;
+	text-align:center;
+	background-image: -moz-linear-gradient(top, transparent 75%, $dark 75%);
+	background-image: -webkit-linear-gradient(top, transparent 75%, $dark 75%);
+	background-image: -o-linear-gradient(top, transparent 75%, $dark 75%);
+	background-image: linear-gradient(to bottom, transparent 75%, $dark 75%);
+	background-size: 90px 2px;
+	background-origin: padding-box;
+	background-position: center 100%;
+	background-repeat: no-repeat;	
+	
+	
+	
+		@media screen and (max-width:em(500)) 
+		{
+		font-size:em(16);
+		line-height:150%;
+		}
+	
+	}
+
+.resume-links
+	{
+	text-align:center;
+	font-family:$sans;	
+	}
+
+	
+.basic-list
+	{
+	margin:0px;
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 20px; /* Firefox */
+    column-gap: 20px;
+    
+    			@media screen and (max-width:em(650)) 
+				{
+				-webkit-column-count: 1; /* Chrome, Safari, Opera */
+   				-moz-column-count: 1; /* Firefox */
+    			column-count: 1;
+				}
+    
+
+		li
+		{
+		margin:0 0 10px 20px;
+		font-size:em(15);
+		line-height:150%;
+		text-indent:-20px;
+		
+		&:before
+			{
+			width:10px;
+			height:10px;
+			background-color:$aqua;
+			content:' ';
+			display:inline-block;
+			margin:10px 8px 0 0;			
+			}		
+		}
+	}
+	
+.resume-mugshot
+	{
+	width:120px;
+	height:120px;
+	margin:em(4) auto rem(30);
+	border-radius:50%;
+	background-color:$haze;
+	overflow:hidden;
+	}

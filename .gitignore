@@ -1,0 +1,9 @@
+dist/
+site/
+source/scripts/vendor/
+source/scripts/bower_components/
+source/photos_out/
+node_modules/
+source/sass/bourbon/
+
+npm-debug.log

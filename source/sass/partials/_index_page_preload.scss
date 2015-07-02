@@ -1,0 +1,242 @@
+.main-header
+	{
+	width:100%;
+	padding:0 0 45%;
+	margin:0 auto 0;
+	text-align:center;
+	left:0px;
+	top:0px;
+	background-color:transparent;
+	z-index: 5;
+	position:absolute;
+	overflow:hidden;	
+	@media screen and (max-width:em(850)) {
+	height:rem(365);
+		}		
+		&:after {
+			display:block;
+			content:' ' ;
+			height:51px;
+			width:100%;
+			position: absolute;
+			bottom:0; 
+			overflow:hidden;
+			background-image:url('<$mt:BlogURL$>/siteart/curve.svg');
+			background-size:100% rem(50);
+			background-position:center bottom;
+			background-repeat:no-repeat;
+		}	
+	@media screen and (max-width:em(600)) 
+		{
+		&:after {background-size:100% rem(40);};
+		}
+	
+	}
+
+.main_header_nameplate
+	{
+	font-family:$flair;
+	font-size:em(120);
+	text-align:center;
+	margin:0 auto;
+	line-height:95%;
+	display:inline-block;
+	padding:0;
+	color:white;
+	font-style:italic;
+	text-shadow: 0px 2px 2rem(8) rgba(30, 30, 30, 0.4);
+	position:absolute;
+	width:100%;
+//	bottom:120px;
+	bottom:125px;
+	left:0px;
+	opacity:0;
+	transform: scale(.98,.98);
+		@media screen and (max-width:em(800)) {
+		font-size:em(84);
+		padding:12px rem(20) 15px;
+	//	bottom:rem(105);
+		bottom:110px;
+		}			
+		@media screen and (max-width:em(425)) {
+		font-size:em(48);
+		padding:10px 0 2rem(8);
+//		bottom:210px;
+		bottom:225px;
+		}
+	a { background-image:none;text-shadow:none, none;}	
+}
+.main-header-nameplate-active{	
+	opacity:1;
+	bottom:125px;
+	transform: scale(1,1);
+	transition:opacity .6s .4s ease-in, transform .4s .4s cubic-bezier(1.000, 0.215, 0.020, 1.335);
+	@media screen and (max-width:em(800)) {
+		bottom:110px;
+		}					
+	@media screen and (max-width:em(425)) {
+		bottom:225px;
+		}			
+}	
+.navigation-menu {
+	margin:5px 0 0px;
+	padding:0;
+	clear:right;
+	width:100%;
+	position:absolute;
+//	bottom:rem(45);
+	bottom:rem(60);
+	opacity:0;
+	transform: scale(.95,.95);
+	@media screen and (max-width:em(750)) {
+		margin:0 0 rem(8);
+		}
+	@media screen and (max-width:em(425)) {
+		top:rem(190);
+		}
+	
+		li {
+		display:inline-block;
+		font-size:em(20);
+		font-family:$sans;
+		text-transform:uppercase;
+		text-align:right;
+		display:inline-block;
+		margin:0 0 0 -rem(4);
+		padding:0;
+		line-height:100%;
+		color:white;
+		padding:3px 12px 30px 0;
+		letter-spacing:.03em;
+		text-shadow:0px 0px rem(8) rgba(30, 30, 30, 0.7);
+			a
+			{
+			background-image:none;
+			color:white;
+			color:red;
+			text-shadow:0px 0px 15px rgba(30, 30, 30, 0.5);
+			}
+				
+			&:after {
+			content:'|';
+			display:inline-block;
+			margin:0 0 0 rem(8);
+			color:white;
+			letter-spacing:-.1em;
+			}
+			&:nth-child(4) {			
+				&:after{content:'';}		
+			}			
+			&:nth-child(1){padding:3px 12px 5px;}
+			
+			
+			@media screen and (max-width:em(800)) 
+			{
+			font-size:em(16);			
+			}
+
+			@media screen and (max-width:em(425)) 
+			{
+			width:100%;
+			text-align:center;
+			margin:0 0 em(15);
+			
+				&:after
+				{
+				content:' ';
+				display:none;
+				}
+			}		
+		a {
+		color:white;		
+		&:hover {color:white; text-shadow:none !important;}		
+		}		
+		}
+	}
+.navigation-menu-active {
+	bottom:rem(60);
+	opacity:1;
+	transform: scale(1,1);
+	transition:opacity .7s .8s ease-out, transform .4s .8s ease-out;
+//	transition-delay:.8s;
+	@media screen and (max-width:em(425)) {
+		top:160px;
+		}
+		li {
+			@media screen and (max-width:em(425)) {
+				padding:3px 12px 5px 0;
+			}
+		}		
+}
+ul
+	{
+	list-style-type:none;
+	margin:0;
+	padding:0;	
+	}
+	
+	
+.hero-art
+	{
+	width:100%;
+	max-width:1600px;
+	padding:0 0 44.5%;
+	margin:0 auto;
+	background-image:url('siteart/pl_hero_index.jpg');
+	background-attachment:fixed;
+	background-size:100% auto;
+	position:relative;
+	min-height:em(365);
+	overflow:hidden;
+	transition: .3s -webkit-filter linear;
+	transition:filter .3s;
+	
+		@media screen and (max-width:em(800)) 
+		{
+		height:297px;
+		background-size:auto 365px;
+		background-position:center top;	
+		background-image:url('siteart/sm_hero_index.jpg');
+		}
+	
+	}
+.site-subhead-module {
+	@include spanner_too (3, 1200, 0, 3);
+	margin:rem(40) auto;
+	position:relative;
+	max-width:rem(1100);
+	padding:0 10% rem(30);
+	min-height:rem(150);	
+	@media screen and (max-width:em(600)) {
+		max-width:rem(400);
+		margin:rem(20) auto;
+		min-height:rem(200);
+		}			
+}				
+.triple-module-head {
+	font-size:em(22);
+	font-family:$sans;
+	margin:0 auto rem(15);
+	text-align:center;
+	font-weight:700;
+	color:$med;
+	opacity:0;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	width:80%;
+	transform: scale(.95,.95);
+	line-height:150%;
+		
+		@media screen  and (max-width:em(600)) 
+		{
+		font-size:em(18);
+		}	
+	}	
+.triple-module-head-active
+	{
+	opacity:1;
+	transform: scale(1,1);
+	transition:opacity .5s 1.1s,  transform .4s 1.1s ease-out;
+	}
