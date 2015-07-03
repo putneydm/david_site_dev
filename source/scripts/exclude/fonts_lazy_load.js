@@ -14,52 +14,34 @@ function d(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:appl
 },
 initFontsWoff: function (pageType) {
    if (pageType === 'portfolio-page') {
-      return '../fonts/fontsWOFF_r2.css';
-   //   var woff2 = '../fonts/fontsWOFF2r2.css';
+      return '../../fonts/fontsWOFF_r2.css';
    }
    if (pageType === 'section-page') {
       return '../fonts/fontsWOFF_r2.css';
-   //   var woff2 = '../../fonts/fontsWOFF2r2.css';
    }
    if (pageType === 'blog-entry') {
       return '../../fonts/fontsWOFF_r2.css';
-    //  var woff2 = '../../fonts/fontsWOFF2r2.css';
    }
    else {
 	return 'fonts/fontsWOFF_r2.css';
 	}
-//	var woff2 = 'fonts/fontsWOFF2r2.css';
 },
 initFontsWoffTwo: function (pageType) {
    if (pageType === 'portfolio-page') {
-      return '../fonts/fontsWOFF_r2.css';
-   //   var woff2 = '../fonts/fontsWOFF2r2.css';
+      return '../../fonts/fontsWOFF2r2.css';
    }
    if (pageType === 'section-page') {
-      return '../fonts/fontsWOFF_r2.css';
-   //   var woff2 = '../../fonts/fontsWOFF2r2.css';
+      return '../fonts/fontsWOFF2r2.css';
    }
    if (pageType === 'blog-entry') {
-      return '../../fonts/fontsWOFF_r2.css';
-    //  var woff2 = '../../fonts/fontsWOFF2r2.css';
+      return '../../fonts/fontsWOFF2r2.css';
    }
    else {
-	return 'fonts/fontsWOFF_r2.css';
-//	var woff2 = 'fonts/fontsWOFF2r2.css';
+	return 'fonts/fontsWOFF2r2.css';
    }
 }
 };
-/*
-else {
-	var woff = 'fonts/fontsWOFF_r2.css';
-	var woff2 = 'fonts/fontsWOFF2r2.css';
-}
-*/
-
 (function() {
   fontLoad.intialize();
 })();
-
-
-//loadFont('font-file', woff, woff2)
 
