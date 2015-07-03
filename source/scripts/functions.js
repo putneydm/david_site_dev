@@ -14,8 +14,6 @@ var pageFunctions = {
       topNav = document.getElementById('inside-header'),
       blogEntries = document.getElementsByClassName('blog-entry-text');
 
-      var test = ThisVar;
-
     //data
     var pageType = document.getElementsByTagName('Body')[0].getAttribute('data-pagetype');
 
