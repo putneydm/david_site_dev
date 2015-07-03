@@ -40,7 +40,7 @@ var mainBowerFiles = require('main-bower-files');
 var paths = {
   pageTemplates : {
    input : 'source/templates/*.html',
-   testing: 'site',
+   testing: 'site/templates',
    dist : 'dist/templates'
   },
   scripts : {
@@ -61,7 +61,7 @@ var paths = {
     exclude : '!source/sass/partials/*scss',
     testing : 'site/css',
     dist : 'dist/css',
-    watch : 'source/sass/**/'
+    watch : 'source/sass/**/*.scss'
   },
   images : {
     input : 'source/photos_in/{*.jpg, *.tiff, *png}',
@@ -797,7 +797,7 @@ gulp.task('listen', function () {
       //  gulp.start('refresh');
     });
     // css
-        gulp.watch(paths.styles.input).on('change', function(file) {
+        gulp.watch(paths.styles.watch).on('change', function(file) {
         gulp.start('css');
       //  gulp.start('refresh');
     });
