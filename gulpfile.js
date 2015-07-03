@@ -23,9 +23,11 @@ var cssBase64 = require('gulp-css-base64');
 var rename = require('gulp-rename');
 //var copy = require('gulp-copy');
 var clean = require('gulp-rimraf');
-var filter = require('gulp-filter');
+//var filter = require('gulp-filter');
 var stylish = require('jshint-stylish');
 var rename = require('gulp-rename');
+var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
 
 //svg
 var svgstore = require('gulp-svgstore');
@@ -58,7 +60,8 @@ var paths = {
     input : 'source/sass/*.scss',
     exclude : '!source/sass/partials/*scss',
     testing : 'site/css',
-    dist : 'dist/css'
+    dist : 'dist/css',
+    watch : 'source/sass/**/'
   },
   images : {
     input : 'source/photos_in/{*.jpg, *.tiff, *png}',
@@ -761,9 +764,6 @@ gulp.task('minify-fonts', function() {
     .pipe(gulp.dest(paths.mini.output));
 });
 
-gulp.task('default', function(){
-  // Default task code
-});
 
 // update this if I ever need to change fonts
 gulp.task('cssBase64', function () {
@@ -773,3 +773,50 @@ gulp.task('cssBase64', function () {
         }))
         .pipe(gulp.dest(paths.fonts.output));
 });
+
+
+// gulp watches
+
+
+// Spin up livereload server and listen for file changes
+gulp.task('listen', function () {
+    livereload.listen();
+    // page templates
+    gulp.watch(paths.pageTemplates.input).on('change', function(file) {
+        gulp.start('templates');
+      //  gulp.start('refresh');
+    });
+    // scripts
+        gulp.watch(paths.scripts.input).on('change', function(file) {
+        gulp.start('concat');
+      //  gulp.start('refresh');
+    });
+    // scripts exclude
+        gulp.watch(paths.scripts.exclude).on('change', function(file) {
+        gulp.start('minifyScripts');
+      //  gulp.start('refresh');
+    });
+    // css
+        gulp.watch(paths.styles.input).on('change', function(file) {
+        gulp.start('css');
+      //  gulp.start('refresh');
+    });
+
+
+});
+
+// Run livereload after file change
+gulp.task('refresh', ['compile', 'pages', 'images'], function () {
+    livereload.changed();
+});
+
+
+// Compile files, generate docs, and run unit tests (default)
+gulp.task('default', [
+	'templates',
+	'css',
+	'svg',
+	'bower',
+	'concat',
+	'minifyScripts'
+]);
