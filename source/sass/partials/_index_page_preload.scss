@@ -180,7 +180,7 @@ ul
 	{
 	width:100%;
 	max-width:1600px;
-	padding:0 0 44.5%;
+	padding:0 0 45%;
 	margin:0 auto;
 	background-image:url('siteart/pl_hero_index.jpg');
 	background-attachment:fixed;
@@ -190,7 +190,7 @@ ul
 	overflow:hidden;
 	transition: .3s -webkit-filter linear;
 	transition:filter .3s;
-	
+
 		@media screen and (max-width:em(800)) 
 		{
 		height:297px;
@@ -198,7 +198,6 @@ ul
 		background-position:center top;	
 		background-image:url('siteart/sm_hero_index.jpg');
 		}
-	
 	}
 .site-subhead-module {
 	@include spanner_too (3, 1200, 0, 3);
