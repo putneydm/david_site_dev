@@ -9,7 +9,7 @@
 	background-position:center top;
 	background-repeat:no-repeat;
 	position:relative;
-	overflow:hidden;	
+	overflow:hidden;
 	&:before {
 			display:block;
 			content:' ' ;
@@ -82,6 +82,9 @@
 		background-position:center rem(40);	
 		}		
 }	
+.hero-art-portfolio-overlay-special {
+	padding:0 0 42% !important;
+}
 .portfolio-introduction-container {
 	width:100%;
 	margin:rem(40) auto 0;
