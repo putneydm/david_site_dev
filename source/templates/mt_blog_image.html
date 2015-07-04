@@ -1,9 +1,8 @@
-<figure class="blog-image">	
-    <div class="med-photo-overlay"></div>
-<picture>  
-		<source srcset="<$mt:BlogArchiveURL$>siteart/large_<mt:EntryDataImage_one>.jpg" media="(min-width:550px)">
-		<source srcset="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" media="(min-width:350px)">
-		<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall_<mt:EntryDataImage_one>.jpg">
-		<img src="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" class="lazyload" alt="">
-		</picture>	  
+<figure class="blog-image med-photo-overlay">	
+	<picture>  
+		<source srcset="<$mt:BlogArchiveURL$>siteart/large_<mt:EntryDataImage_one>.jpg" media="(min-width:550px)" class="lazyload">
+		<source srcset="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" media="(min-width:350px)" class="lazyload">
+		<source srcset="<$mt:BlogArchiveURL$>siteart/xsmall_<mt:EntryDataImage_one>.jpg" class="lazyload">
+		<img src="<$mt:BlogArchiveURL$>siteart/med_<mt:EntryDataImage_one>.jpg" alt="<mt:If tag="EntryDataImage_alt"><mt:EntryDataImage_alt></mt:If>" class="lazyload">
+	</picture>	  
 </figure>
