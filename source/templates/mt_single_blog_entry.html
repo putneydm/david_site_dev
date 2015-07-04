@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body data-pagetype="blog-entry">
 <span class="hidden" aria-hidden="true">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"></svg> 
 </span>
@@ -45,8 +45,11 @@
 <div class="blog-container blog-single-entry">
 	
 <article class="blog-entry">
-    
-
+<mt:If tag="EntryDataImage_one">
+<a href="<mt:entrypermalink>" rel="next">
+<$mt:Include module="blog_image"$>
+</a>
+</mt:If>    
 	<h1 class="blog-headline"><mt:EntryTitle smarty_pants="1"></h1>
 
     <p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
@@ -79,7 +82,7 @@
 <li><span class="blog-related-links-label">Next </span><a href="<$mt:EntryPermalink$>" rel="next"><mt:entrytitle smarty_pants="1"></a></li>
 </mt:EntryNext>
 <mt:EntryPrevious by_category="1">
-<li><span class="blog-related-links-label">Previous </span><a href="<$mt:EntryPermalink$>" rel="prev"><mt:entrytitle smarty_pants="1">g</a></li>
+<li><span class="blog-related-links-label">Previous </span><a href="<$mt:EntryPermalink$>" rel="prev"><mt:entrytitle smarty_pants="1"></a></li>
 </mt:EntryPrevious>
 </ul>
 </aside>
