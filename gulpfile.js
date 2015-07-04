@@ -39,7 +39,7 @@ var mainBowerFiles = require('main-bower-files');
 
 var paths = {
   pageTemplates : {
-   input : 'source/templates/*.html',
+   input : 'source/templates/{*.html,*shtml}',
    testing: 'site/templates',
    dist : 'dist/templates'
   },
