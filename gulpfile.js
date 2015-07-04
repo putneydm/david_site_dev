@@ -153,13 +153,14 @@ gulp.task('blog-images', function () {
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile) {
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.thumbnail(900, 530),
+             gmfile.resample(72, 72),
+             gmfile.thumbnail(900, '530!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
-             gmfile.colorspace('sRGB');
+             gmfile.colorspace('sRGB'),
+             gmfile.crop(900, 530, 0, 0);
       }, {
         imageMagick: true
       }
@@ -184,12 +185,13 @@ gulp.task('blog-images', function () {
     .pipe(gm(function (gmfile) {
          return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(700, 412),
+             gmfile.thumbnail(700, '412!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
-             gmfile.colorspace('sRGB');
+             gmfile.colorspace('sRGB'),
+            gmfile.crop(700, 412, 0, 0);
       }, {
         imageMagick: true
       }
@@ -214,12 +216,13 @@ gulp.task('blog-images', function () {
     .pipe(gm(function (gmfile) {
          return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(350, 206),
+             gmfile.thumbnail(350, '206!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
-             gmfile.colorspace('sRGB');
+             gmfile.colorspace('sRGB'),
+             gmfile.crop(350, 206, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -243,12 +246,13 @@ gulp.task('blog-images', function () {
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(450, 265),
+             gmfile.thumbnail(450, '265!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
-             gmfile.colorspace('sRGB');
+             gmfile.colorspace('sRGB'),
+             gmfile.crop(450, 265, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -266,216 +270,15 @@ gulp.task('blog-images', function () {
 
     .pipe(gulp.dest(paths.images.testing))
     .pipe(gulp.dest(paths.images.dist));
-
 
     gulp.src(paths.images.input)
- //  .pipe(copy(paths.images.output, 1/2))
    .pipe(clean())
    .pipe(gulp.dest(paths.images.output));
-
- //  .pipe(gulp.dest(paths.images.ouput));
 });
 
 
 
-// Generate responsive images
-gulp.task('resp', function () {
 
- // x-Large images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile) {
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(1800, null),
-             gmfile.crop(1800, 1060, 0, 0),
-             gmfile.quality(25);
-      }, {
-        imageMagick: true
-      }
-    ))
-
-    // Crunches Images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames Images
-    .pipe(rename({
-      prefix: 'xlarge_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-  // Large images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile) {
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(1400, null),
-             gmfile.crop(1400, 825, 0, 0),
-             gmfile.quality(25);
-             // gulp // I don't think this belongs here
-      }, {
-        imageMagick: true
-      }
-    ))
-
-    // Crunches Images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames Images
-    .pipe(rename({
-      prefix: 'large_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-
-  // x-small images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile) {
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(700, null),
-             gmfile.crop(700, 412, 0, 0),
-             gmfile.quality(25);
-             // gulp // Again, I don't think this belongs here
-    }, {
-      imageMagick: true
-    }))
-
-    // Crunches images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames images
-    .pipe(rename({
-      prefix: 'xsmall_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-
-  // Medium images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(900, null),
-             gmfile.crop(900, 531, 0, 0),
-             gmfile.quality(25);
-             // gulp // Again, I don't think this belongs here
-    }, {
-      imageMagick: true
-    }))
-
-    // Crunches images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames images
-    .pipe(rename({
-      prefix: 'med_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-
-  // Square images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(400, null),
-             gmfile.crop(400, 400, 0, 0),
-             gmfile.quality(25);
-             // gulp // Again, I don't think this belongs here
-    }, {
-      imageMagick: true
-    }))
-
-    // Crunches images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames images
-    .pipe(rename({
-      prefix: 'square_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-
-  // Small shallow images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(900, null),
-             gmfile.crop(900, 371, 0, 0),
-             gmfile.quality(25);
-             // gulp // Again, I don't think this belongs here
-    }, {
-      imageMagick: true
-    }))
-
-    // Crunches images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames images
-    .pipe(rename({
-      prefix: 'shallow_small_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-
-  // x-small shallow images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-             gmfile.resample(72, 72),
-             gmfile.resize(700, null),
-             gmfile.crop(700, 290, 0, 0),
-             gmfile.quality(25);
-    }, {
-      imageMagick: true
-    }))
-
-    // Crunches images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames images
-    .pipe(rename({
-      prefix: 'shallow_xsmall_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
-
-});
 
 
 gulp.task('hero', function () {
@@ -484,11 +287,14 @@ gulp.task('hero', function () {
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(2300, null),
-             gmfile.crop(2300, 856, 0, 0),
-             gmfile.quality(45);
-             // gulp // Again, I don't think this belongs here
+       gmfile.resample(72, 72),
+       gmfile.thumbnail(2300, '856^'),
+       gmfile.quality(82),
+       gmfile.filter('triangle'),
+       gmfile.unsharp('0.25x0.25+8+0.065'),
+       gmfile.interlace('none'),
+       gmfile.colorspace('sRGB'),
+       gmfile.crop(2300, 856, 0, 0);
     },{
       imageMagick: true
     }))
@@ -504,18 +310,22 @@ gulp.task('hero', function () {
       prefix: 'hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Medium
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(1500, null),
-             gmfile.crop(1500, 558, 0, 0),
-             gmfile.quality(35);
-             // gulp // Again, I don't think this belongs here
+         return gmfile.setFormat('jpg'),
+             gmfile.resample(72, 72),
+             gmfile.thumbnail(1500, '558^'),
+             gmfile.quality(82),
+             gmfile.filter('triangle'),
+             gmfile.unsharp('0.25x0.25+8+0.065'),
+             gmfile.interlace('none'),
+             gmfile.colorspace('sRGB'),
+             gmfile.crop(1500, 558, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -531,18 +341,22 @@ gulp.task('hero', function () {
       prefix: 'med_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Small
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-    		 gmfile.resample(72, 72),
-             gmfile.resize(1000, null),
-             gmfile.crop(1000, 372, 0, 0),
-             gmfile.quality(30);
-             // gulp // Again, I don't think this belongs here
+          gmfile.resample(72, 72),
+          gmfile.thumbnail(1000, '372^'),
+          gmfile.quality(82),
+          gmfile.filter('triangle'),
+          gmfile.unsharp('0.25x0.25+8+0.065'),
+          gmfile.interlace('none'),
+          gmfile.colorspace('sRGB'),
+          gmfile.crop(1000, 372, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -558,18 +372,22 @@ gulp.task('hero', function () {
       prefix: 'sm_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Large PL
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      	     gmfile.resample(72, 72),
-             gmfile.resize(900, null),
-             gmfile.crop(900, 352, 0, 0),
-             gmfile.quality(10);
-             // gulp // Again, I don't think this belongs here
+          gmfile.resample(72, 72),
+          gmfile.thumbnail(900, '352^'),
+          gmfile.quality(10),
+          gmfile.filter('triangle'),
+          gmfile.unsharp('0.25x0.25+8+0.065'),
+          gmfile.interlace('none'),
+          gmfile.colorspace('sRGB'),
+          gmfile.crop(900, 352, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -585,17 +403,22 @@ gulp.task('hero', function () {
       prefix: 'pl_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Small PL
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(500, null),
-             gmfile.crop(500, 208, 0, 0),
-             gmfile.quality(10);
+       gmfile.resample(72, 72),
+       gmfile.thumbnail(500, '208^'),
+       gmfile.quality(10),
+       gmfile.filter('triangle'),
+       gmfile.unsharp('0.25x0.25+8+0.065'),
+       gmfile.interlace('none'),
+       gmfile.colorspace('sRGB'),
+       gmfile.crop(500, 208, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -610,22 +433,32 @@ gulp.task('hero', function () {
     .pipe(rename({
       prefix: 'pl_hero_small_'
     }))
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
-    .pipe(gulp.dest(paths.images.output));
+   gulp.src(paths.images.input)
+   .pipe(clean())
+   .pipe(gulp.dest(paths.images.output));
+
 
 });
 
 
-gulp.task('heroi', function () {
+gulp.task('hero-index', function () {
 
   // Large heros
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(2300, null),
-             gmfile.crop(2300, 1040, 0, 0),
-             gmfile.quality(45);
+       gmfile.resample(72, 72),
+       gmfile.thumbnail(2300, '1040^'),
+       gmfile.quality(82),
+       gmfile.filter('triangle'),
+       gmfile.unsharp('0.25x0.25+8+0.065'),
+       gmfile.interlace('none'),
+       gmfile.colorspace('sRGB'),
+       gmfile.crop(2300, 1040, 0, 0);
+
              // gulp // Again, I don't think this belongs here
     },{
       imageMagick: true
@@ -642,18 +475,22 @@ gulp.task('heroi', function () {
       prefix: 'hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Medium
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(1500, null),
-             gmfile.crop(1500, 679, 0, 0),
-             gmfile.quality(30);
-             // gulp // Again, I don't think this belongs here
+       gmfile.resample(72, 72),
+       gmfile.thumbnail(1500, '679^'),
+       gmfile.quality(82),
+       gmfile.filter('triangle'),
+       gmfile.unsharp('0.25x0.25+8+0.065'),
+       gmfile.interlace('none'),
+       gmfile.colorspace('sRGB'),
+       gmfile.crop(1500, 679, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -669,18 +506,22 @@ gulp.task('heroi', function () {
       prefix: 'med_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Small
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-    		 gmfile.resample(72, 72),
-             gmfile.resize(1000, null),
-             gmfile.crop(1000, 453, 0, 0),
-             gmfile.quality(30);
-             // gulp // Again, I don't think this belongs here
+       return gmfile.setFormat('jpg'),
+             gmfile.resample(72, 72),
+             gmfile.thumbnail(1000, '453^'),
+             gmfile.quality(82),
+             gmfile.filter('triangle'),
+             gmfile.unsharp('0.25x0.25+8+0.065'),
+             gmfile.interlace('none'),
+             gmfile.colorspace('sRGB'),
+             gmfile.crop(1000, 453, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -696,18 +537,22 @@ gulp.task('heroi', function () {
       prefix: 'sm_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Large PL
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
-      return gmfile.setFormat('jpg'),
-      	     gmfile.resample(72, 72),
-             gmfile.resize(900, null),
-             gmfile.crop(900, 407, 0, 0),
-             gmfile.quality(10);
-             // gulp // Again, I don't think this belongs here
+       return gmfile.setFormat('jpg'),
+          gmfile.resample(72, 72),
+          gmfile.thumbnail(900, '407^'),
+          gmfile.quality(10),
+          gmfile.filter('triangle'),
+          gmfile.unsharp('0.25x0.25+8+0.065'),
+          gmfile.interlace('none'),
+          gmfile.colorspace('sRGB'),
+          gmfile.crop(900, 407, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -723,18 +568,22 @@ gulp.task('heroi', function () {
       prefix: 'pl_hero_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
 
 
   // Small PL
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
-      		 gmfile.resample(72, 72),
-             gmfile.resize(500, null),
-             gmfile.crop(500, 227, 0, 0),
-             gmfile.quality(10);
-
+          gmfile.resample(72, 72),
+          gmfile.thumbnail(500, '227^'),
+          gmfile.quality(82),
+          gmfile.filter('triangle'),
+          gmfile.unsharp('0.25x0.25+8+0.065'),
+          gmfile.interlace('none'),
+          gmfile.colorspace('sRGB'),
+          gmfile.crop(500, 227, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -750,7 +599,13 @@ gulp.task('heroi', function () {
       prefix: 'pl_hero_small_'
     }))
 
-    .pipe(gulp.dest(paths.images.output));
+    .pipe(gulp.dest(paths.images.testing))
+    .pipe(gulp.dest(paths.images.dist));
+
+
+   gulp.src(paths.images.input)
+   .pipe(clean())
+   .pipe(gulp.dest(paths.images.output));
 
 });
 
