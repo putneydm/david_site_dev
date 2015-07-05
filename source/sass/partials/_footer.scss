@@ -35,21 +35,24 @@
 		transition:background-color .2s ease-in;	
 		background-image:none;
 		box-shadow:-1px -1px 1px rgba($med, .1);	
-			.mail, .twitter, .facebook, .github {
-				transition: fill .2s;	
-			}	
-		&:hover {
+			.footer-icon {
+				width:rem(20);
+				height:rem(20);
+				fill:$aqua;
+				transition: fill .2s;
+			}
+			&:hover {
 			background-color:$aqua;
 			color:white;		
-		.mail, .twitter, .facebook, .github {
-			fill:white;		
-			}	
+			.footer-icon {fill:white}
 		}		
 	}
 	@media screen and (max-width:em(350)) { margin:40px 5px 0;		}
 }
 	.mail-link {font-size:em(16);}
 }
+
+//.mail-icon {fill:red;}
 
 .site-footer-inactive {	
 	.mail-link {
@@ -135,7 +138,8 @@
 			transition:background-color .2s;
 		}	
 	}	
-	.up-arrow{ fill:white;}
+	.scroll-up-icon {width:rem(10);height:rem(10);}
+	.up-arrow{fill:white;}
 
 .scroll-to-top-inactive {
 	opacity:0;
@@ -233,20 +237,14 @@
 			}
 		
 		
-		a
-		{
+		a {
 		color:$med;
 		background:none;
-		text-shadow:none;
-		
-			&:hover
-			{
+		text-shadow:none;	
+			&:hover {
 			color:$aqua;
-			}
-		
+			}	
 		}
-		
-		}
-	
-	
 	}
+
+}

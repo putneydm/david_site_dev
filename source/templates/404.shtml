@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-<title>Front page</title>
+<title>Our moment of triumph</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
 <meta charset="utf-8">
 
@@ -11,7 +11,7 @@ main{width:100%;margin:0 auto;clear:both;position:relative}*{box-sizing:border-b
  
 </style> 
 
-<link href="http://www.davidputney.com/css/styles6.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="http://www.davidputney.com/css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
 
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie_styles.css" />
@@ -248,7 +248,7 @@ main{width:100%;margin:0 auto;clear:both;position:relative}*{box-sizing:border-b
 <script src="scripts/min/selectivizr-min.js"></script>  
 
 <![endif]-->
-<script src="http://www.davidputney.com/scripts/concat/scripts.js"></script>
+<script src="http://www.davidputney.com/scripts/scripts.js"></script>
 
 
  
