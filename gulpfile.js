@@ -10,6 +10,7 @@ var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css'); // Add var prefix for consistency
 var scsslint = require('gulp-scss-lint');
+var autoprefixer = require('gulp-autoprefixer');
 
 //images
 var imagemin = require('gulp-imagemin');
@@ -114,6 +115,10 @@ gulp.task('css', function() {
   gulp.src([paths.styles.input, paths.styles.exclude])
   .pipe(scsslint())
    .pipe(sass())
+   .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+   }))
    .pipe(gulp.dest(paths.styles.testing))
     .pipe(minifyCSS({
       keepBreaks:false
