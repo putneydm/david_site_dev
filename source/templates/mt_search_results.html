@@ -30,11 +30,13 @@
 </head>
 
 <body>
-<span class="hidden" aria-hidden="true">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1"></svg> 
-</span>
-
-<!-- @import "modules/head/skip_links.html" --> 
+<div class="svg-import hidden" aria-hidden="true">
+		<$mt:Include module="svg_icons"$>
+	</div>
+<ul class="hidden">
+<li><a href="#nav-start">Skip to navigation</a></li>
+<li><a href="#main">Skip to content</a></li>
+</ul>
 
 <$mt:Include module="inside_page_header"$>
 
