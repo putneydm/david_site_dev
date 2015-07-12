@@ -118,7 +118,7 @@
 	background-image: -webkit-linear-gradient(top, transparent 75%, $hover_color 75%);
 	background-image: -o-linear-gradient(top, transparent 75%, $hover_color 75%);
 	background-image: linear-gradient(to bottom, transparent 75%, $hover_color 75%);
-	background-size: 2px 2px;
+	background-size: 12px 12px;
 	background-origin: padding-box;
 	background-position: 0 95%;
 	background-repeat: repeat-x;	
@@ -138,7 +138,20 @@
 	background-repeat: repeat-x;
 	text-shadow:1px 1px 0px white, -1px 1px 0px white ;
 	}	
-	
+
+@mixin underscore-body ($color, $position)
+	{
+	color:$color;
+	background-image: -moz-linear-gradient(top, transparent 75%, $color 75%);
+	background-image: -webkit-linear-gradient(top, transparent 75%, $color 75%);
+	background-image: -o-linear-gradient(top, transparent 75%, $color 75%);
+	background-image: linear-gradient(to bottom, transparent 75%, $color 75%);
+	background-size: 12px 12px;
+	background-origin: padding-box;
+	background-position: 0 $position;
+	background-repeat: repeat-x;
+//	text-shadow:1px 1px 0px white, -1px 1px 0px white ;
+	}	
 	
 $base-font-size: 	16px;
 $base-line-height:  $base-font-size*1.5;

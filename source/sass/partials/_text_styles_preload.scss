@@ -16,7 +16,7 @@ font-family:$droid;
 	}
 }
 a {
-	@include underscore ($aqua, 95%);
+	@include underscore-body ($x-light-aqua, 98%);
 	transition:color .2s ease-in, background .2s ease-in;
 	text-decoration:none;
 	color:$body;
