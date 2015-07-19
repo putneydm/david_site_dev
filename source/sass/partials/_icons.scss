@@ -1,10 +1,11 @@
 // button icons
 .button-icon {
 	display:inline-block;
-	width:17px;
-	height:9px;
+	width:rem(24);
+	height:rem(10);
 	vertical-align:middle;
-}
-.arrow-shape {
 	fill:white;
 }
+//.arrow-shape {
+//	fill:white;
+//}
