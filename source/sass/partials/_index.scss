@@ -180,7 +180,11 @@
 	@media screen and (max-width:rem(550)) {
 		width:calc(50% - 5px);
 		flex-grow: 2;
-	}	
+	}
+	a {
+	background:none;
+		&:hover {.teaser-arrow-icon{fill:$aqua;transition:fill .2s} }
+	}
 }
 .blog-teaser-image {
 	padding:0;
@@ -193,3 +197,10 @@
 	margin:rem(5) 0 rem(12);
 	font-size:rem(15);
 }	
+.teaser-arrow-icon {
+	display:inline-block;
+	width:rem(24);
+	height:rem(10);
+	vertical-align:middle;
+	fill:$light-aqua;
+}
