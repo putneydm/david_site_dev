@@ -8,12 +8,16 @@
 		</mt:If>
 		</figure>
 		<mt:If tag="EntryDataPromo_blurb">
-			<h4 class="blog-teaser-hed"><mt:EntryDataPromo_blurb  smarty_pants="1"></h4>
+			<h4 class="blog-teaser-hed"><mt:EntryDataPromo_blurb  smarty_pants="1">
+			<svg class="teaser-arrow-icon">
+				<use xlink:href="#arrow-right" />
+			</svg>			
+			</h4>
 		</mt:If>
 		</a>
 	</li>
 	</mt:Entries>
-	<mt:Entries category="blog entry AND NOT blog entry/promote" lastn="3" unique="1">
+	<mt:Entries category="blog entry AND NOT promote" lastn="3" unique="1">
 <li class="blog-teaser-item blog-teaser-highlight">
 		<a href="<mt:entrypermalink>" rel="canonical">
 		<figure class="blog-teaser-image med-photo-overlay">
@@ -22,7 +26,11 @@
 		</mt:If>
 		</figure>
 		<mt:If tag="EntryDataPromo_blurb">
-			<h4 class="blog-teaser-hed"><mt:EntryDataPromo_blurb  smarty_pants="1"></h4>
+			<h4 class="blog-teaser-hed"><mt:EntryDataPromo_blurb  smarty_pants="1">
+			<svg class="teaser-arrow-icon">
+				<use xlink:href="#arrow-right" />
+			</svg>
+			</h4>
 		</mt:If>
 		</a>
 	</li>
