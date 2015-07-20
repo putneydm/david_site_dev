@@ -75,9 +75,12 @@
     <li><a href="<$mt:TagSearchLink$>" rel="tag"><mt:TagName></a></li>
 </mt:EntryTags>
 	</ul>
+	
+<$mt:Include module="blog_entry_teasers_inside"$>
 
+<mt:ignore>
+<!--
 <ul class="blog-related-links-list">
-
 <mt:EntryNext by_category="1">
 <li><span class="blog-related-links-label">Next </span><a href="<$mt:EntryPermalink$>" rel="next"><mt:entrytitle smarty_pants="1"></a></li>
 </mt:EntryNext>
@@ -85,6 +88,8 @@
 <li><span class="blog-related-links-label">Previous </span><a href="<$mt:EntryPermalink$>" rel="prev"><mt:entrytitle smarty_pants="1"></a></li>
 </mt:EntryPrevious>
 </ul>
+-->
+</mt:ignore>
 </footer>
 </article>
  
@@ -95,7 +100,6 @@
 </main>
     <$mt:Include module="footer"$>
 </body>
-
 <$mt:Include module="js_links"$>
 <$mt:Include module="google_analytics"$>
 </html>
