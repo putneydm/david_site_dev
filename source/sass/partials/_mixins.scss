@@ -199,3 +199,14 @@ $cap-height: 		0.68;
 	padding-top: $baseline-distance + em;
 	margin-bottom: $base-line-height - $baseline-distance + em;
 }	
+
+@mixin aspect-ratio($viewport,$margin,$width,$height){
+  $ratio:$height / $width;
+  $elHeight:$viewport * $ratio;
+  width:calc(#{$viewport}vw - #{$margin}px);
+  height:calc(#{$elHeight}vw - #{$margin}px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;  
+}
