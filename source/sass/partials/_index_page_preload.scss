@@ -4,8 +4,8 @@
 	padding:0 0 45%;
 	margin:0 auto 0;
 	text-align:center;
-	left:0px;
-	top:0px;
+	left:0;
+	top:0;
 	background-color:transparent;
 	z-index: 5;
 	position:absolute;
@@ -16,7 +16,7 @@
 		&:after {
 			display:block;
 			content:' ' ;
-			height:51px;
+			height:rem(51);
 			width:100%;
 			position: absolute;
 			bottom:0; 
@@ -44,42 +44,42 @@
 	padding:0;
 	color:white;
 	font-style:italic;
-	text-shadow: 0px 2px 2rem(8) rgba(30, 30, 30, 0.4);
+	text-shadow: 0 rem(2) rem(8) rgba(30, 30, 30, 0.4);
 	position:absolute;
 	width:100%;
 //	bottom:120px;
-	bottom:125px;
-	left:0px;
+	bottom:rem(125);
+	left:0;
 	opacity:0;
 	transform: scale(.98,.98);
 		@media screen and (max-width:em(800)) {
 		font-size:em(84);
-		padding:12px rem(20) 15px;
+		padding:rem(12) rem(20) rem(15);
 	//	bottom:rem(105);
-		bottom:110px;
+		bottom:rem(110);
 		}			
 		@media screen and (max-width:em(425)) {
 		font-size:em(48);
-		padding:10px 0 2rem(8);
+		padding:rem(10) 0 rem(8);
 //		bottom:210px;
-		bottom:225px;
+		bottom:rem(225);
 		}
 	a { background-image:none;text-shadow:none, none;}	
 }
 .main-header-nameplate-active{	
 	opacity:1;
-	bottom:125px;
+	bottom:rem(125);
 	transform: scale(1,1);
 	transition:opacity .6s .4s ease-in, transform .4s .4s cubic-bezier(1.000, 0.215, 0.020, 1.335);
 	@media screen and (max-width:em(800)) {
-		bottom:110px;
+		bottom:rem(110);
 		}					
 	@media screen and (max-width:em(425)) {
-		bottom:225px;
+		bottom:rem(225);
 		}			
 }	
 .navigation-menu {
-	margin:5px 0 0px;
+	margin:rem(5) 0 0;
 	padding:0;
 	clear:right;
 	width:100%;
@@ -106,53 +106,44 @@
 		padding:0;
 		line-height:100%;
 		color:white;
-		padding:3px 12px 30px 0;
+		padding:rem(3) rem(12) rem(30) 0;
 		letter-spacing:.03em;
-		text-shadow:0px 0px rem(8) rgba(30, 30, 30, 0.7);
-			a
-			{
-			background-image:none;
-			color:white;
-			color:red;
-			text-shadow:0px 0px 15px rgba(30, 30, 30, 0.5);
-			}
-				
+		text-shadow:0 0 rem(8) rgba(30, 30, 30, 0.7);
+			a {
+				background-image:none;
+				color:white;
+				color:red;
+				text-shadow:0 0 rem(15) rgba(30, 30, 30, 0.5);
+			}				
 			&:after {
-			content:'|';
-			display:inline-block;
-			margin:0 0 0 rem(8);
-			color:white;
-			letter-spacing:-.1em;
+				content:'|';
+				display:inline-block;
+				margin:0 0 0 rem(12);
+				color:white;
+				letter-spacing:-.1em;
 			}
 			&:nth-child(4) {			
 				&:after{content:'';}		
 			}			
-			&:nth-child(1){padding:3px 12px 5px;}
-			
-			
-			@media screen and (max-width:em(800)) 
-			{
-			font-size:em(16);			
+		//	&:nth-child(1){padding:rem(3) rem(12) rem(5);border:3px solid red;}
+					
+			@media screen and (max-width:em(800)) {
+				font-size:em(16);			
 			}
 
-			@media screen and (max-width:em(425)) 
-			{
-			width:100%;
-			text-align:center;
-			margin:0 0 em(15);
-			
-				&:after
-				{
-				content:' ';
-				display:none;
+			@media screen and (max-width:em(425)) {
+				width:100%;
+				text-align:center;
+				margin:0 0;
+				padding:rem(3) 0 rem(25);		
+					&:after {content:' '; display:none;}
 				}
-			}		
-		a {
-		color:white;		
-		&:hover {color:white; text-shadow:none !important;}		
+			//	&:nth-child(1){padding:rem(3) 0 rem(25);}
+		a { color:white;		
+			&:hover {color:white; text-shadow:none !important;}		
 		}		
-		}
 	}
+}
 .navigation-menu-active {
 	bottom:rem(60);
 	opacity:1;
@@ -160,13 +151,8 @@
 	transition:opacity .7s .8s ease-out, transform .4s .8s ease-out;
 //	transition-delay:.8s;
 	@media screen and (max-width:em(425)) {
-		top:160px;
-		}
-		li {
-			@media screen and (max-width:em(425)) {
-				padding:3px 12px 5px 0;
-			}
-		}		
+		top:rem(160);
+		}	
 }
 ul
 	{
@@ -179,7 +165,7 @@ ul
 .hero-art
 	{
 	width:100%;
-	max-width:1600px;
+	max-width:rem(1600);
 	padding:0 0 45%;
 	margin:0 auto;
 	background-image:url('siteart/pl_hero_index.jpg');
@@ -193,8 +179,8 @@ ul
 
 		@media screen and (max-width:em(800)) 
 		{
-		height:297px;
-		background-size:auto 365px;
+		height:rem(297);
+		background-size:auto rem(365);
 		background-position:center top;	
 		background-image:url('siteart/sm_hero_index.jpg');
 		}
