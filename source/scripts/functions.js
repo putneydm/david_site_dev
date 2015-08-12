@@ -551,7 +551,22 @@ trackProgressBar: function () {
     return change*(currentTime*currentTime*currentTime + 1) + start;
   },
   expandMenu: function(topNav) {
-    topNav.classList.toggle("menu-active");
+    var self = this;
+    var button = document.getElementById('menu-button');
+    var header = document.getElementById('inside-header')
+    var classTest =   topNav.classList.contains('nav-list--open');
+    if (classTest === false) {
+      self.addShit(topNav, 'nav-list--open');
+      self.addShit(button, 'nav-menu-button--active');
+      self.addShit(header, 'menu-container--active');
+    }
+    else {
+      self.removeShit(topNav, 'nav-list--open');
+      self.addShit(topNav, 'nav-list--close');
+      self.removeShit(button, 'nav-menu-button--active');
+      self.removeShitTimer(header, 'menu-container--active', 500);
+      self.removeShitTimer(topNav, 'nav-list--close', 500);
+    }
   },
   isElementVisible: function(el) {
     var rect   = el.getBoundingClientRect(),
