@@ -1,14 +1,14 @@
 //html, body { height: 100%; overflow:auto;}
 figure {
-	img{width:100%;}	
+	img{width:100%;}
 }
 img {display:block;
-	a{ border:0;}	
-}	
-a { 
+	a{ border:0;}
+}
+a {
 	img {border:0;}
 }
-.clearfix{	
+.clearfix{
 	&:after {content:'';width:100%;height:0;clear:both;display:block;}
 }
 p {
@@ -20,11 +20,11 @@ p {
 h1, h2, h3, h4
 	{
 	font-family:$sans;
-	font-weight:700;	
+	font-weight:700;
 	}
 ul {
-	padding:0px;	
-		li { list-style-type:none;}	
+	padding:0px;
+		li { list-style-type:none;}
 		}
 .section-header {
 	font-size:em(30);
@@ -33,12 +33,12 @@ ul {
 	font-weight:bold;
 	text-align:center;
 	color:$aqua;
-	transform:font-size .3s;	
+	transform:font-size .3s;
 	@media screen and (max-width:em(500)) {
 		font-size:em(22);
-		}	
-		span {color:$med;}	
-		a {background-image:none;}	
+		}
+		span {color:$med;}
+		a {background-image:none;}
 }
 sup {
 	font-size:rem(10);
@@ -57,7 +57,7 @@ sup {
 			color:$aqua;
 			transition:background-color .5s, color .5s;
 			&:hover {background:none, $aqua;transition:background-color .2s;text-shadow:none;color:#fff;}
-		}	
+		}
 }
 .footnote-link-selected {
 	a {
@@ -88,7 +88,7 @@ ol li {
     counter-increment: step-counter;
     margin: 0 0 rem(18) 0;
     font-size:rem(14);
-    line-height:150%; 
+    line-height:150%;
     color:$dark;
 }
 
