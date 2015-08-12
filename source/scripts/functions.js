@@ -518,6 +518,12 @@ trackProgressBar: function () {
     object.classList.remove(style);
     return this;
   },
+  removeShitTimer: function (el, style, time) {
+    var self = this;
+    setTimeout(function(){
+      self.removeShit(el, style);
+    }, time)
+  },
   scrollToGeneric: function(to, duration, start) {
     // slow scrolls to location send destination, duration of scroll and start point
     var self = this;
