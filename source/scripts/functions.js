@@ -11,6 +11,7 @@ var pageFunctions = {
       scrollToTopButton = document.getElementById('scroll-to-top'),
       documentBody = document.body,
       menuButton = document.getElementById('menu-button'),
+      navMenu = document.getElementById('nav-menu'),
       topNav = document.getElementById('inside-header'),
       blogEntries = document.getElementsByClassName('blog-entry-text');
 
@@ -33,7 +34,7 @@ var pageFunctions = {
 
     // init listeners
     this.initScrollButton(scrollToTopButton, documentBody);
-    this.initMenuButton(topNav, menuButton);
+    this.initMenuButton(navMenu, menuButton);
     this.initFootnoteClick(topNav, menuButton);
     this.initScrollBackButton();
   //  this.initProgressBar();
@@ -53,9 +54,12 @@ var pageFunctions = {
 
    document.onscroll = function() {
     var scrollPosition = self.getScrollPosition(); // gets scroll position from function
+
+    self.initNavHeaderAnimate(heroImage, heroArtHeight,topNav)
+
     self.handleScrollButton(scrollPosition, scrollToTopButton);
     if (heroImage) {
-      self.handleNav(scrollPosition, topNav, heroArtHeight);
+      // self.handleNav(scrollPosition, topNav, heroArtHeight);
       self.handleHeroArt(scrollPosition, heroImage, heroArtHeight);
     }
     self.handleSiteFooter(scrollPosition);
