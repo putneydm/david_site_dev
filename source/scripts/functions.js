@@ -129,6 +129,62 @@ var pageFunctions = {
       });
     }
   },
+  initNavHeaderAnimate: function (heroImage, heroArtHeight,topNav) {
+    var self=this;
+    self.handleHeroAnimate(heroImage,heroArtHeight);
+    self.handleNavAnimate(topNav,heroArtHeight);
+  },
+  handleHeroAnimate:function (el, elHeight) {
+    var self = this;
+    var scrollPosition = self.getScrollPosition ();
+    if (elHeight < scrollPosition + 150) {
+      self.removeShit(el, 'hero-art-portfolio--visible');
+      self.addShit(el, 'hero-art-portfolio--hidden')
+      return false;
+    }
+    if (elHeight > scrollPosition + 150) {
+      self.removeShit(el, 'hero-art-portfolio--hidden');
+      self.addShit(el, 'hero-art-portfolio--visible');
+    }
+  },
+  handleNavAnimate: function (el,elHeight) {
+    var self=this;
+    var scrollPosition = self.getScrollPosition ();
+    var extended = el.classList.contains('nav-fixed-bar--extended');
+    var retracted = el.classList.contains('nav-fixed-bar--retracted');
+
+    console.log('ex', extended);
+    console.log('sp', scrollPosition);
+    //adds styles  on scroll down
+
+    if (scrollPosition > 120 && retracted === false) {
+      self.addShit(el, 'nav-fixed-bar--active');
+      self.addShit(el, 'nav-fixed-bar--retracted');
+      return false;
+    }
+    if (scrollPosition > elHeight + 150 && retracted === true) {
+      self.addShit(el, 'nav-fixed-bar--transition');
+      self.addShit(el, 'nav-fixed-bar--extended');
+      self.removeShit(el, 'nav-fixed-bar--retracted');
+      return false;
+    }
+    if (scrollPosition < elHeight && extended === true) {
+      self.removeShit(el, 'nav-fixed-bar--extended');
+      self.addShit(el, 'nav-fixed-bar--retracted');
+    //  self.removeShit(el, 'nav-fixed-bar--transition');
+    }
+    if (scrollPosition < 120 && retracted === true) {
+      self.removeShit(el, 'nav-fixed-bar--transition');
+      self.removeShit(el, 'nav-fixed-bar--active');
+      self.removeShit(el, 'nav-fixed-bar--retracted');
+    //  self.removeShit(el, 'nav-fixed-bar--transition');
+    }
+
+    //removes on scroll up
+
+
+
+  },
   handleBlogItems: function (elem) {
   // get location of each blog item, return item name and location
   var self = this;
