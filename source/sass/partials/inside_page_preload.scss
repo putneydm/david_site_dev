@@ -1,87 +1,153 @@
 .hero-art-portfolio {
-	width:100%;
-	max-width:rem(1600);
-	padding:0 0 36.5% !important;
-	margin:0 auto;
-	background-image:url('<$mt:BlogURL$>siteart/pl_hero_<$mt:Var name="hero_art"$>.jpg');
-	background-attachment:fixed;
-	background-size:100% auto;
-	background-position:center top;
-	background-repeat:no-repeat;
+	@include aspect-ratio (100, 0, 23, 8.56);
+	min-height:rem(350);
+	background-position: center top;
 	position:relative;
-	overflow:hidden;
-	&:before {
-			display:block;
-			content:' ' ;
-			height:51px;
-			width:100%;
-			position: absolute;
-			bottom: 0; 
-			overflow:hidden;
-			background-image:url('<$mt:BlogURL$>/siteart/curve.svg');
-			background-size:100% rem(50);
-			background-position:center bottom;
-			background-repeat:no-repeat;
-			bottom:0;
-		}	
-	@media screen and (max-width:em(600)) {
-		&:before {background-size:100% rem(40);};
+	background-attachment: fixed;
+	background-size: 100%;
+	background-image:url('<$mt:BlogURL$>siteart/pl_hero_<$mt:Var name="hero_art"$>.jpg');
+	border-bottom: 1px solid white;
+		@media screen and (max-width:em(950)){
+			background-size: auto 350px;
+	}
+	// &::after {
+	// 		content:'';
+	// 		height:rem(110);
+	// 		position:absolute;
+	// 		top:-10px;
+	// 		left:-10px;
+	// 		width:calc(100% + 20px);
+	// 		mix-blend-mode: multiply;
+	// 		background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+	// 		filter: blur(10px);
+	// }
+	&::before {
+		@include aspect-ratio (100, 0, 23, 8.56);
+		min-height:rem(350);
+		content:'';
+		position: absolute;
+		top:0;
+		left:0;
+		background-color: white;
+		opacity:0;
+	}
+	@media screen and (max-width:em(700)) {
+		&::before {
+			height:rem(90);
 		}
-	@media screen and (max-width:rem(850)) {
-		background-position:center top;
+	}
+	@media screen and (max-width:em(560)) {
+		&::before {
+			height:rem(180);
 		}
-	@media screen and (max-width:rem(750)) {
-		background-image:url('<$mt:BlogURL$>siteart/pl_hero_small_<$mt:Var name="hero_art"$>.jpg');
-		height:rem(300);
-		background-size:auto rem(300);
-		background-position:center top;	
-		}			
+	}
 }
-.hero-art-portfolio-overlay {
-	width:100%;
-	max-width:rem(1600);
-	padding:0 0 37% !important;
-	margin:0 auto;
+.hero-art-curve {
 	position:absolute;
-	top:0;
-	overflow:hidden;
-	&:before {
-			display:block;
-			content:' ' ;
-			height:51px;
-			width:100%;
-			position: absolute;
-			bottom: 0; 
-			overflow:hidden;
-			background-image:url('<$mt:BlogURL$>/siteart/curve.svg');
-			background-size:100% rem(50);
-			background-position:center bottom;
-			background-repeat:no-repeat;
-			bottom:0;
-		}	
-	@media screen and (max-width:em(600)) {
-		&:before {background-size:100% rem(40);};
-		}	
-	@media screen and (max-width:em(600)) {
-		&:before {background-size:100% rem(40);};
-		}
-	@media screen and (max-width:rem(750)) {
-		height:rem(300);
-		}			
+	bottom:-1px;
+	left:0;
+	@include aspect-ratio (100, 0, 23, .86);
+	fill:white;
 }
+.hero-art-portfolio--visible {
+		&::before {
+			opacity: 0;
+			transition: opacity .7s ease-in;
+			will-change:opacity;
+		}
+}
+.hero-art-portfolio--hidden {
+	&::before {
+		opacity: 1;
+		transition: opacity .5s ease-in;
+		will-change:opacity;
+	}
+}
+
+// .hero-art-portfolio {
+// 	width:100%;
+// 	max-width:rem(1600);
+// 	padding:0 0 36.5% !important;
+// 	margin:0 auto;
+// 	background-image:url('<$mt:BlogURL$>siteart/pl_hero_<$mt:Var name="hero_art"$>.jpg');
+// 	background-attachment:fixed;
+// 	background-size:100% auto;
+// 	background-position:center top;
+// 	background-repeat:no-repeat;
+// 	position:relative;
+// 	overflow:hidden;
+// 	&:before {
+// 			display:block;
+// 			content:' ' ;
+// 			height:51px;
+// 			width:100%;
+// 			position: absolute;
+// 			bottom: 0;
+// 			overflow:hidden;
+// 			background-image:url('<$mt:BlogURL$>/siteart/curve.svg');
+// 			background-size:100% rem(50);
+// 			background-position:center bottom;
+// 			background-repeat:no-repeat;
+// 			bottom:0;
+// 		}
+// 	@media screen and (max-width:em(600)) {
+// 		&:before {background-size:100% rem(40);};
+// 		}
+// 	@media screen and (max-width:rem(850)) {
+// 		background-position:center top;
+// 		}
+// 	@media screen and (max-width:rem(750)) {
+// 		background-image:url('<$mt:BlogURL$>siteart/pl_hero_small_<$mt:Var name="hero_art"$>.jpg');
+// 		height:rem(300);
+// 		background-size:auto rem(300);
+// 		background-position:center top;
+// 		}
+// }
+// .hero-art-portfolio-overlay {
+// 	width:100%;
+// 	max-width:rem(1600);
+// 	padding:0 0 37% !important;
+// 	margin:0 auto;
+// 	position:absolute;
+// 	top:0;
+// 	overflow:hidden;
+// 	&:before {
+// 			display:block;
+// 			content:' ' ;
+// 			height:51px;
+// 			width:100%;
+// 			position: absolute;
+// 			bottom: 0;
+// 			overflow:hidden;
+// 			background-image:url('<$mt:BlogURL$>/siteart/curve.svg');
+// 			background-size:100% rem(50);
+// 			background-position:center bottom;
+// 			background-repeat:no-repeat;
+// 			bottom:0;
+// 		}
+// 	@media screen and (max-width:em(600)) {
+// 		&:before {background-size:100% rem(40);};
+// 		}
+// 	@media screen and (max-width:em(600)) {
+// 		&:before {background-size:100% rem(40);};
+// 		}
+// 	@media screen and (max-width:rem(750)) {
+// 		height:rem(300);
+// 		}
+// }
 .hero-art-portfolio-special {
 	padding:0 0 42% !important;
 	background-position:center rem(80);
 	@media screen and (max-width:rem(850)) {
-		background-position:center rem(50);	
+		background-position:center rem(50);
 		}
 	@media screen and (max-width:rem(750)) {
 		background-image:url('<$mt:BlogURL$>siteart/pl_hero_small_<$mt:Var name="hero_art"$>.jpg');
 		height:rem(300);
 		background-size:auto rem(300);
-		background-position:center rem(40);	
-		}		
-}	
+		background-position:center rem(40);
+		}
+}
 .hero-art-portfolio-overlay-special {
 	padding:0 0 42% !important;
 }
@@ -96,5 +162,5 @@
 	@media screen and (max-width:rem(500)) {
 		padding:0 rem(10);
 		margin:rem(20) auto 0;
-		}			
-}		
+		}
+}
