@@ -2,85 +2,86 @@
 	margin:0 auto;
 	padding:rem(80) rem(40) 0;
 	max-width:rem(1100);
-	@media screen and (max-width:em(450)) 
+	position:relative;
+	@media screen and (max-width:em(450))
 		{
 		padding:rem(40) rem(15) 0;
-		}	
-}	
+		}
+}
 .teaser-module	{
 	@include spanner_too (12, 1100, 0, 12);
 	margin:0 0 rem(60) 0;
-}	
+}
 .teaser-module-head	{
 	font-family:$sans;
 	font-size:em(20);
 	border-bottom:rem(1) solid #d0d0d0;
 	font-weight:800;
 	margin:0 0 0 0;
-	padding:0 0 rem(2) 0;	
+	padding:0 0 rem(2) 0;
 		a{
 		color:$body;
-		background-image:none;	
+		background-image:none;
 			&:hover{
 			color:$aqua;
-			background-image:none;			
+			background-image:none;
 			}
-	}	
+	}
 }
 .teaser-module-abstract {
 	@include spanner_too (12, 1100, 0, 4);
 	float:left;
 	margin:rem(5) 0 0 0;
-	padding:0 rem(8) 0 0;	
+	padding:0 rem(8) 0 0;
 		p {
-		font-size:em(14);	
-		}	
+		font-size:em(14);
+		}
 	@media screen and (max-width:em(750)) {
-	@include spanner_too (12, 1100, 0, 12);	
+	@include spanner_too (12, 1100, 0, 12);
 	}
-}	
+}
 .teaser-module-abstract-link {
 	font-family:$sans;
 	color:$aqua;
 	margin:0 rem(4) 0 0;
 	font-weight:700;
 	text-decoration:none;
-	display:inline-block;	
+	display:inline-block;
 	font-size:em(13);
 	text-transform:uppercase;
 	letter-spacing:.07em;
-}	
+}
 .teaser-module-art {
-	@include spanner_too (12, 1100, 0, 8);	
+	@include spanner_too (12, 1100, 0, 8);
 	float:left;
 	border-left:rem(1) solid $light;
-	@media screen and (max-width:em(750)) 
+	@media screen and (max-width:em(750))
 		{
 		@include spanner_too (12, 1100, 0, 12);
 		border-left:0;
-		}	
-}	
+		}
+}
 .teaser-module-mainart {
 	margin:0 0 0 0;
-	@include spanner_too (8, 678, 0, 8);	
+	@include spanner_too (8, 678, 0, 8);
 	display:block;
 	float:left;
 	overflow:hidden;
 	padding:0;
-	position:relative;	
+	position:relative;
 	@media screen and (max-width:em(750)) {
 		@include spanner_too (8, 750, 0, 8);
-		padding:rem(5) 0 0 0;	
+		padding:rem(5) 0 0 0;
 		}
 		img {
 		width:100%;
 		}
-		.med-photo-overlay {	
+		.med-photo-overlay {
 		&:hover {
-			box-shadow:0 0 rem(50) rgba($dark, .7) inset;	
+			box-shadow:0 0 rem(50) rgba($dark, .7) inset;
 			}
 		}
-}	
+}
 .med-photo-overlay {
 	&:after {
 		position:absolute;
@@ -94,8 +95,8 @@
 		transition: box-shadow .2s;
 		z-index:2;
 		}
-}		
-.wide-photo-overlay{	
+}
+.wide-photo-overlay{
 	&:after{
 		position:absolute;
 		top:0;
@@ -107,9 +108,9 @@
 		transition: box-shadow .2s;
 		z-index:10;
 	//	mix-blend-mode:difference;
-		}	
-}	
-.round-photo-overlay{	
+		}
+}
+.round-photo-overlay{
 	&:after{
 		position:absolute;
 		top:0;
@@ -122,8 +123,8 @@
 		z-index:2;
 		mix-blend-mode:difference;
 		border-radius:50%;
-		}	
-}		
+		}
+}
 .hero-art-secondary {
 	width:100%;
 	max-width:rem(1600);
@@ -131,16 +132,16 @@
 	margin:0 auto;
 	background-attachment:fixed;
 	background-size:100% auto;
-	position:relative;	
+	position:relative;
 	min-height:2rem(50);
 	@media screen and (max-width:em(750)) {
 		height:2rem(50);
 		}
-	@media screen and (max-width:em(425)) 
+	@media screen and (max-width:em(425))
 		{
 		height:2rem(50);
-		}	
-}	
+		}
+}
 .section-header-index {
 	font-size:em(48);
 	font-family:$flair;
@@ -149,15 +150,15 @@
 	text-align:center;
 	color:$aqua;
 	transform:font-size .3s;
-	margin-bottom:rem(5);	
+	margin-bottom:rem(5);
 	@media screen and (max-width:em(500)) {
 		font-size:em(36);
 		}
 		a {
 		background-image:none;
 		color:$aqua;
-		}	
-}	
+		}
+}
 .blog-teaser-list {
 	width:100%;
 	display:flex;
@@ -169,7 +170,7 @@
 .blog-teaser-item {
 	width:calc(20% - 5px);
 	margin-right:5px;
-	padding:rem(10) rem(10) 0 rem(10);	
+	padding:rem(10) rem(10) 0 rem(10);
 	border-radius:2px;
 	flex-grow:1;
 		&:nth-child(1) {order:2; border:1px solid $aqua !important; ; flex-grow:2.2; 	width:calc(22% - 5px);}
@@ -178,7 +179,7 @@
 		&:nth-child(4) {order:4}
 	@media screen and (max-width:rem(650)) {
 		padding:rem(5) rem(5) 0 rem(5);
-	}	
+	}
 	@media screen and (max-width:rem(550)) {
 		width:calc(50% - 5px);
 		&:nth-child(1) {width:calc(50% - 5px);order:3}
@@ -194,12 +195,12 @@
 	margin:0;
 	position:relative;
 }
-	
+
 .blog-teaser-hed {
 	line-height:120%;
 	margin:rem(5) 0 rem(12);
 	font-size:rem(15);
-}	
+}
 .teaser-arrow-icon {
 	display:inline-block;
 	width:rem(24);
