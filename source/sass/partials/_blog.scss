@@ -88,10 +88,14 @@ h3 {
 }
 .blog-more-button {
 	position:absolute;
-	bottom:40px;
+	bottom:rem(350);
 	left:0;
 	right:0;
 	margin:auto;
+	@media screen and (max-width:em(550)) {
+		bottom:rem(490);
+	}
+
 }
 .blog-entry-block{
 	a { color:$body;
