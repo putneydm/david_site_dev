@@ -59,6 +59,14 @@ sup {
 			&:hover {background:none, $aqua;transition:background-color .2s;text-shadow:none;color:#fff;}
 		}
 }
+p, h1, h2, h3, h4, li, a, code, sup, span {
+	&::selection {
+		background: lighten($aqua, 50); /* WebKit/Blink Browsers */
+	}
+	&::-moz-selection {
+		background: #ffb7b7; /* Gecko Browsers */
+	}
+}
 .footnote-link-selected {
 	a {
 	background-color:$aqua;
