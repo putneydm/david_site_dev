@@ -2,7 +2,8 @@
 <html class="no-js">
 <head>
 <title>David Putney | <mt:EntryTitle></title>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
+<!-- this is a page -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta charset="utf-8">
 <link rel="shortcut icon" href="http://www.davidputney.com/favicon.ico" />
 
@@ -20,10 +21,11 @@
 </mt:If>
 
 <$mt:Include module="meta_tags"$>
- 
+
 <style rel="stylesheet" type="text/css" media="all">
-<$mt:Include module="embedded_CSS_inside"$>
-</style> 
+<$mt:Include module="embedded_CSS_main"$>
+<$mt:Include module="blog_embedded_styles"$>
+</style>
 
 <$mt:Include module="fonts_links"$>
 <$mt:Include module="css_links"$>
@@ -32,20 +34,18 @@
 <body data-pagetype="blog-entry">
 <div class="svg-import hidden" aria-hidden="true">
 	<$mt:Include module="svg_icons"$>
-</div>	
+</div>
 
-<!-- @import "modules/head/skip_links.html" --> 
-
-<$mt:Include module="inside_page_header_visible"$>
-
-
+<header class="no-billboard">
+ <$mt:Include module="page_header"$>
+</header>
 
 <main id="main">
 
 <div id="blog-container" class="blog-container blog-single-entry">
-	
+
 <article class="blog-entry">
- 
+
 <mt:If tag="EntryDataImage_one">
 <$mt:Include module="blog_image"$>
 </mt:If>
@@ -67,7 +67,7 @@
 <footer class="blog-entry-footer">
 <mt:If tag="EntryDataFootnotes">
 <$mt:Include module="footnotes"$>
-<$mt:Include module="footnote_return"$>  
+<$mt:Include module="footnote_return"$>
 </mt:If>
 <$mt:Include module="blog_sig"$>
 	<ul class="blog-tags">
@@ -75,7 +75,7 @@
     <li><a href="<$mt:TagSearchLink$>" rel="tag"><mt:TagName></a></li>
 </mt:EntryTags>
 	</ul>
-	
+
 <$mt:Include module="blog_entry_teasers_inside"$>
 
 <mt:ignore>
@@ -92,7 +92,7 @@
 </mt:ignore>
 </footer>
 </article>
- 
+
 
 
 </div>

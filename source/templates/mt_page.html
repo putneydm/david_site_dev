@@ -54,10 +54,9 @@ portfolio</mt:if>
 </mt:If>
 
 <style rel="stylesheet" type="text/css" media="all">
+<$mt:Include module="embedded_CSS_main"$>
 <mt:If tag="PageDataCategory" eq="Blog">
 <$mt:Include module="blog_embedded_styles"$>
-<mt:else>
-<$mt:Include module="embedded_CSS_inside"$>
 </mt:if>
 </style>
 <noscript>
@@ -85,40 +84,15 @@ portfolio</mt:if>
 <li><a href="#nav-start">Skip to navigation</a></li>
 <li><a href="#main">Skip to content</a></li>
 </ul>
-<mt:ignore>
-<$mt:Include module="inside_page_header"$>
-</mt:ignore>
-		<div id="inside-header" class="nav-fixed-bar">
-				<p class="nav-site-logo"><a href="">David Putney</a></p>
-
-	<ul id="nav-menu" class="nav-list">
-		<li><a href="">Design</a></li>
-		<li><a href="">Projects</a></li>
-		<li><a href="">About</a></li>
-		<li><a href="">Blog</a></li>
-	</ul>
-	<div id="menu-button" class="nav-menu-button">
-		<svg class="nav-menu-button-icn nav-menu-button-icn--open">
-			<use xlink:href="#chevron-up" />
-		</svg>
-		<a href="#footer-nav">MENU</a>
-		<svg class="nav-menu-button-icn nav-menu-button-icn--closed">
-			<use xlink:href="#chevron-down" />
-		</svg>
-		</span>
-	</div>
-	<div class="scroll-progress-wrapper">
-			<div id="scroll-progress" class="scroll-progress" style="width: 12%;"></div>
-		</div>
-</div>
-
-<div id="hero-image" class="hero-art-portfolio backgound-set  filter-me" data-image="<$mt:Var name="hero_art"$>">
+<header class="small-billboard">
+	<$mt:Include module="page_header"$>
+<div id="hero-image" class="hero-art backgound-set  filter-me" data-image="<$mt:Var name="hero_art"$>">
 	<svg class="hero-art-curve">
 			<use xlink:href="#inside_page_mask" />
 		</svg>
 	</span>
 </div>
-
+</header>
 <main id="main">
 <mt:If tag="PageDataCategory" ne="about">
 <header class="portfolio-introduction-container">
