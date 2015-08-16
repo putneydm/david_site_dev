@@ -6,7 +6,7 @@ margin:0;
 font-family:$droid;
 -webkit-font-smoothing: antialiased;
 }
-.clearfix {	
+.clearfix {
 	&:after{
 	content:'';
 	width:100%;
@@ -20,9 +20,9 @@ a {
 	transition:color .2s ease-in, background .2s ease-in;
 	text-decoration:none;
 	color:$body;
-		&:hover {@include hoverer ($aqua);}	
+		&:hover {@include hoverer ($aqua);}
 }
-.hidden { position:absolute; left:-90000px;}		
+.hidden { position:absolute; left:-90000px;}
 .portfolio-project-name	 {
 	width:100%;
 	text-align:center;
@@ -32,14 +32,14 @@ a {
 	margin:0 0 20px;
 	transition:font-size .3s;
 	font-weight:700;
-	letter-spacing:-.03em;	
-		@media screen and (max-width:em(800)) {font-size:em(60);}	
-		@media screen and (max-width:em(600)) {font-size:em(50);margin:0 0 10px;}	
-		@media screen and (max-width:em(500)) {font-size:em(36);}	
-}	
+	letter-spacing:-.03em;
+		@media screen and (max-width:em(800)) {font-size:em(60);}
+		@media screen and (max-width:em(600)) {font-size:em(50);margin:0 0 10px;}
+		@media screen and (max-width:em(500)) {font-size:em(36);}
+}
 .page-subhead {
 	font-size:em(22);
-	font-family:$sans;	
+	font-family:$sans;
 	font-weight:700;
 	text-align:center;
 	color:$body;
@@ -51,4 +51,4 @@ a {
 		font-size:em(18);
 		margin:0 0 20px 0;
 	}
-}	
+}
