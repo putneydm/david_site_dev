@@ -115,8 +115,7 @@
     85%  {top:15px;height:10px}
     100% {top:0;height:55px; scale: 1;}
 }
-.scroll-to-top
-	{
+.scroll-to-top {
 	position:fixed;
 	right:15px;
 	bottom:30px;
@@ -145,106 +144,67 @@
 	opacity:0;
 	transition:opacity .2s ease-in;
 }
-.scroll-to-top-active
-	{
+.scroll-to-top-active {
 	opacity:.9;
 	transition:opacity .2s ease-in;
 	}
-.footer-tagline
-	{
+.footer-tagline {
 	color:$med;
 	font-size:em(11);
 	text-align:center;
 	margin:0 0 5px 0;
 	padding:0;
-	}
-
-
-.svg-import
-	{
+}
+.svg-import {
 	height:0;
 	width:0;
 	overflow:hidden;
-	}
-
-
-.footer-navigation-menu
-	{
+}
+.footer-navigation-menu {
 	width:100%;
 	text-align:center;
 	margin:0 auto 40px;
-	background-image: -moz-linear-gradient(top, transparent 75%, $med 75%);
-	background-image: -webkit-linear-gradient(top, transparent 75%, $med 75%);
-	background-image: -o-linear-gradient(top, transparent 75%, $med 75%);
 	background-image: linear-gradient(to bottom, transparent 75%, $med 75%);
 	background-size: 60% 2px;
 	background-origin: padding-box;
 	background-position: center 100%;
 	background-repeat: no-repeat;
 	padding:0 0 25px;
-
-				@media screen and (max-width:em(420))
-				{
-				margin:0px auto 20px;
-				}
-
-
-
-	li
-		{
+		@media screen and (max-width:em(420)){
+		margin:0px auto 20px;
+		}
+	li {
 		display:inline-block;
 		font-family:$sans;
 		font-size:em(20);
 		margin:40px 0 0;
 		text-transform:capitalize;
 		font-weight:700;
-
-				@media screen and (max-width:em(450))
-				{
-				font-size:em(16);
-				}
-
-			&:after
-			{
+			@media screen and (max-width:em(450))	{
+			font-size:em(16);
+			}
+			&:after {
 			content:' | ';
 			display:inline-block;
 			margin:0 15px;
 			color:$light;
 			letter-spacing: -.2em;
-
-				@media screen and (max-width:em(420))
-				{
+				@media screen and (max-width:em(420)){
 				margin:0 5px;
 				}
-
 			}
-
-			&:nth-child(4)
-			{
-
-				&:after
-				{
-				content:'';
-				margin:0px;
-				}
-
+			&:nth-child(4){
+				&:after	{content:''; margin:0px;}
 			}
-
-			@media screen and (max-width:em(420))
-			{
-			margin:20px 0 0;
-			font-size:em(16);
+			@media screen and (max-width:em(420)) {
+				margin:20px 0 0;
+				font-size:em(16);
 			}
-
-
 		a {
-		color:$med;
-		background:none;
-		text-shadow:none;
-			&:hover {
-			color:$aqua;
-			}
+			color:$med;
+			background:none;
+			text-shadow:none;
+			&:hover { color:$aqua;}
 		}
 	}
-
 }
