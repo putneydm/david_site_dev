@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
 <title>Davidputney.com | <$mt:CategoryLabel$></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta charset="utf-8">
 <!-- meta tags  -->
 	<$mt:Include module="meta_tags"$>
@@ -14,34 +14,40 @@
 	</mt:if>
 </mt:entries>
 <style rel="stylesheet" type="text/css" media="all">
-	<$mt:Include module="embedded_CSS_inside"$>
+	<$mt:Include module="embedded_CSS_main"$>
 </style>
 <noscript>
 	<style>
 	.hero-art-portfolio{background-image: url('<$mt:BlogURL$>siteart/hero_<$mt:Var name="hero_art"$>.jpg');}@media screen and (max-width: 46.875em) {.hero-art-portfolio {background-image: url('<$mt:BlogURL$>siteart/sm_hero_<$mt:Var name="hero_art"$>.jpg');}}</style>
 </noscript>
-<link href="<mt:BlogURL>css/styles.css" rel="stylesheet" type="text/css" media="all" /> 
+<link href="<mt:BlogURL>css/styles.css" rel="stylesheet" type="text/css" media="all" />
 <$mt:Include module="css_links"$>
 <$mt:Include module="fonts_links"$>
 <style type="text/css" media="all">
 	<mt:Entries>
-	<mt:If tag="EntryDataType" eq="parallax">
-	<$mt:EntryDataImage_one setvar="image_one"$> 
-	<$mt:Include module="parallax_styles"$>
-	</mt:If>
+		<mt:If tag="EntryDataType" eq="parallax">
+		<mt:EntryDataImage_one setvar="image_one">
+		<mt:Include module="parallax_styles">
+		</mt:If>
 	</mt:Entries>
 </style>
 </head>
 <body data-pagetype="portfolio-page">
 	<div class="svg-import hidden" aria-hidden="true">
 	<$mt:Include module="svg_icons"$>
-	</div>	
+	</div>
 	<ul class="hidden">
 		<li><a href="#nav-start">Skip to navigation</a></li>
 		<li><a href="#main">Skip to content</a></li>
 	</ul>
-	 <$mt:Include module="inside_page_header_visible"$>
-	<header id="hero-image" class="hero-art-portfolio backgound-set hero-overlay filter-me" data-image = "<$mt:Var name="hero_art"$>">
+	<header class="small-billboard">
+	 <$mt:Include module="page_header"$>
+	 <div id="hero-image" class="hero-art backgound-set  filter-me" data-image="<$mt:Var name="hero_art"$>">
+	 	<svg class="hero-art-curve">
+	 			<use xlink:href="#inside_page_mask" />
+	 		</svg>
+	 	</span>
+	 </div>	
 	</header>
 	<div class="hero-art-portfolio-overlay"></div>
 <main id="main">
@@ -61,61 +67,61 @@
 			 <mt:If tag="EntryDataRank" eq="1">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>	
+		</mt:entries>
+		<mt:entries>
 			 <mt:If tag="EntryDataRank" eq="2">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			 <mt:If tag="EntryDataRank" eq="3">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="4">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="5">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="6">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="7">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="8">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="9">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
-		<mt:entries>		
+		</mt:entries>
+		<mt:entries>
 			<mt:If tag="EntryDataRank" eq="10">
 			 <mt:include module="teaser_types">
 			</mt:if>
-		</mt:entries>	
+		</mt:entries>
 	<mt:Entries>
 		<mt:If tag="EntryDataType" eq="header">
 		<mt:If tag="EntryDataLive_site">
-			<a href="<mt:EntryDataLive_site>" class="button" rel="nofollow">View the live site	   
+			<a href="<mt:EntryDataLive_site>" class="button" rel="nofollow">View the live site
 				<span aria-hidden="true">
 					<svg class="button-icon">
 		  				<use xlink:href="#arrow-right" />
 					</svg>
-				</span>	
+				</span>
 			</a>
 		</mt:If>
 		</mt:If>
