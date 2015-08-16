@@ -58,10 +58,9 @@ var pageFunctions = {
     self.initNavHeaderAnimate(heroImage, heroArtHeight,topNav)
 
     self.handleScrollButton(scrollPosition, scrollToTopButton);
-    if (heroImage) {
-      // self.handleNav(scrollPosition, topNav, heroArtHeight);
-      self.handleHeroArt(scrollPosition, heroImage, heroArtHeight);
-    }
+    // if (heroImage) {
+    //   self.handleHeroArt(scrollPosition, heroImage, heroArtHeight);
+    // }
     self.handleSiteFooter(scrollPosition);
     self.handleScrollBackButton (scrollPosition);
     self.handleFootnoteButton (scrollPosition);
@@ -183,11 +182,6 @@ var pageFunctions = {
       self.removeShit(el, 'nav-fixed-bar--retracted');
     //  self.removeShit(el, 'nav-fixed-bar--transition');
     }
-
-    //removes on scroll up
-
-
-
   },
   handleBlogItems: function (elem) {
   // get location of each blog item, return item name and location
@@ -304,9 +298,9 @@ trackProgressBar: function () {
   nameplateAnimate: function (siteNameplate, navigation, heroImage, siteSubhead) {
    var self = this;
    if (siteNameplate)  {
-      self.addShit(siteNameplate, 'main-header-nameplate-active');
-      self.addShit(navigation, 'navigation-menu-active');
-      self.addShit(siteSubhead, 'triple-module-head-active');
+      self.addShit(siteNameplate, 'main-header-nameplate--active');
+      self.addShit(navigation, 'navigation-menu--active');
+      self.addShit(siteSubhead, 'triple-module-head--active');
     }
     if (heroImage)  {
       self.removeShit(heroImage, 'filter-me');
@@ -403,19 +397,10 @@ trackProgressBar: function () {
     self.removeShit(activeFootnote, 'list-item-active')
         .addShit(activeParagraph, 'footnote-paragraph-active')
         .removeShit(footNoteReturnButton, 'btn-footnote-return-active');
-
-    // remove active state of button
-//    self.removeShit(footNoteReturnButton, 'btn-footnote-return-active');
-
-    // add active state to paragraph of text
-  //  self.addShit(activeParagraph, 'footnote-paragraph-active');
-
-    // remove active state of link and paragraph once active state is done
     setTimeout(function(){
       self.removeShit(activeFootnoteLink, 'footnote-link-active')
           .removeShit(activeParagraph, 'footnote-paragraph-active');
     }, 4000);
-
   },
   handleScrollBackButton: function (scrollPosition) {
       var self = this;
@@ -457,38 +442,6 @@ trackProgressBar: function () {
       self.removeShit(scrollButton, 'scroll-to-top-active');
       self.addShit(scrollButton, 'scroll-to-top-inactive');
     }
-  },
-  handleNav: function (scrollPosition, topNav, heroArtHeight) {
-    var self = this;
-    var isNavReady = topNav.classList.contains('inside-header-ready'),
-      isNavExtended = topNav.classList.contains('inside-header-extend'),
-      isNavRetracted = topNav.classList.contains('inside-header-retract');
-
-    if (scrollPosition > 80 && isNavReady === false) {
-      self.addShit(topNav, 'inside-header-ready');
-    }
-    if (scrollPosition > heroArtHeight) {
-      self.addShit(topNav, 'inside-header-extend');
-    }
-    if (scrollPosition < heroArtHeight && isNavExtended === true) {
-      self.addShit(topNav, 'inside-header-retract');
-    }
-    if (scrollPosition < 80 && isNavRetracted === true) {
-      self.removeShit(topNav, 'inside-header-retract');
-      self.removeShit(topNav, 'inside-header-extend');
-      self.removeShit(topNav, 'inside-header-ready');
-    }
-  },
-  handleHeroArt: function (scrollPosition, heroArt, heroArtHeight) {
-    var self = this;
-    var isHeroArtActive = heroArt.classList.contains('hero-fadeout');
-
-    if (scrollPosition > heroArtHeight - 20 && isHeroArtActive === false) {
-      self.addShit(heroArt, 'hero-fadeout');
-      }
-    if (scrollPosition < heroArtHeight && isHeroArtActive === true) {
-      self.removeShit(heroArt, 'hero-fadeout');
-      }
   },
   handleSiteFooter: function(scrollPosition) {
     var self = this;
