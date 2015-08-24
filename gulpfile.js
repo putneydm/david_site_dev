@@ -74,7 +74,12 @@ var paths = {
     input : 'source/svg/*.svg',
     testing : 'site/svg/',
     dist : 'dist/svg/'
-    }
+  },
+  fonts : {
+    input : 'source/fonts/*.css',
+    testing : 'site/fonts/',
+    dist : 'dist/fonts/'
+  }
 };
 
 // tasks
@@ -615,29 +620,29 @@ gulp.task('hero-index', function () {
 });
 
 
-// update this if I ever need to change fonts
-gulp.task('minify-fonts', function() {
-  gulp.src(paths.mini.input)
-    .pipe(minifyCSS({
-      keepBreaks:false
-    }))
-    .pipe(gulp.dest(paths.mini.output));
-});
+// // update this if I ever need to change fonts
+// gulp.task('minify-fonts', function() {
+//   gulp.src(paths.mini.input)
+//     .pipe(minifyCSS({
+//       keepBreaks:false
+//     }))
+//     .pipe(gulp.dest(paths.mini.output));
+// });
 
-
 // update this if I ever need to change fonts
-gulp.task('cssBase64', function () {
+gulp.task('fonts', function () {
     return gulp.src(paths.fonts.input)
          .pipe(cssBase64({
             maxImageSize: 8*10024 // bytes
         }))
-        .pipe(gulp.dest(paths.fonts.output));
+        .pipe(gulp.dest(paths.fonts.testing))
+        .pipe(minifyCSS({
+          keepBreaks:false
+        }))
+        .pipe(gulp.dest(paths.fonts.dist));
 });
 
-
 // gulp watches
-
-
 // Spin up livereload server and listen for file changes
 gulp.task('listen', function () {
     livereload.listen();
