@@ -155,9 +155,6 @@ var pageFunctions = {
     var scrollPosition = self.getScrollPosition ();
     var extended = el.classList.contains('nav-fixed-bar--extended');
     var retracted = el.classList.contains('nav-fixed-bar--retracted');
-
-    console.log('ex', extended);
-    console.log('sp', scrollPosition);
     //adds styles  on scroll down
 
     if (scrollPosition > 120 && retracted === false) {
