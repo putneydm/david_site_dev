@@ -1,20 +1,20 @@
 .no-js {
 .filter-me {
-	filter: none;	
-	}	
+	filter: none;
+	}
 
-.main-header-nameplate{	
+.main-header-nameplate{
 	opacity:1;
-	bottom:125px;
+	bottom:150px;
 	transform: scale(1,1);
 	@media screen and (max-width:em(800)) {
-		bottom:110px;
-		}					
+		bottom:130px;
+		}
 	@media screen and (max-width:em(425)) {
 		bottom:225px;
-		}			
+		}
 }
-.navigation-menu {
+.nav-menu-display {
 	bottom:rem(60);
 	opacity:1;
 	transform: scale(1,1);
