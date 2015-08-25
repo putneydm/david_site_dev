@@ -69,7 +69,6 @@ h3 {
 .blog-entry-text-index {
 	max-height:rem(350);
 	overflow-y:hidden;
-	overflow-x: visible;
 	position:relative;
 	padding:0;
 		@media screen and (max-width:em(450)) {
@@ -86,16 +85,16 @@ h3 {
 		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 31%,rgba(255,255,255,1) 100%);
 	}
 }
-.blog-more-button {
+.blog-button-wrapper {
+	width:100%;
 	position:absolute;
-	bottom:rem(350);
-	left:0;
-	right:0;
-	margin:auto;
+	bottom:rem(325);
 	@media screen and (max-width:em(550)) {
-		bottom:rem(490);
+		bottom:rem(525);
 	}
-
+}
+.blog-more-button {
+	margin:0 auto;
 }
 .blog-entry-block{
 	a { color:$body;
