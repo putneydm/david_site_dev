@@ -67,7 +67,7 @@
 			z-index:1;
 		}
 			&::after {display:none;}
-			@media screen and (max-width:em(750)){
+			@media screen and (max-width:em(800)){
 				background-size: auto 365px;
 		}
 	}
