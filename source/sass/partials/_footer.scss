@@ -15,44 +15,42 @@
 	}
 .footer-links {
 	width:100%;
-	text-align:center;
 	margin:0 0 rem(50) 0;
 	position:relative;
+	display:flex;
+	justify-content: center;
 	li {
-	width:rem(55);
-//	height:rem(55);
-	display:inline-block;
-	margin:0 rem(20) 0;
-	position:relative;
-		a {
-		display:block;
+		width:rem(55);
+		height:rem(55);
+		margin:0 rem(20) 0;
+		box-shadow:0px 0px 30px 15px rgba($med, .3);
+		flex-grow:0;
 		border-radius:50%;
 		background-color:white;
-		padding-top:18px;
+		text-align:center;
+		overflow:hidden;
+		a {
+		display:block;
 		width:55px;
 		height:55px;
-		font-size:em(18);
-		color:$aqua;
 		transition:background-color .2s ease-in;
 		background-image:none;
-		box-shadow:0px 0px 30px 15px rgba($med, .3);
-			.footer-icon {
-				width:rem(20);
-				height:rem(20);
-				fill:$aqua;
-				transition: fill .2s;
-			}
 			&:hover {
 			background-color:$aqua;
 			color:white;
-			.footer-icon {fill:white}
+				.footer-icon { fill:white }
 		}
 	}
 	@media screen and (max-width:em(400)) { margin:40px 10px 0;		}
 }
-	.mail-link {font-size:em(16);}
 }
-
+.footer-icon {
+	width:rem(20);
+	height:rem(20);
+	fill:$aqua;
+	transition: fill .2s;
+	margin-top:rem(18);
+}
 //.mail-icon {fill:red;}
 
 .site-footer-inactive {
@@ -152,7 +150,7 @@
 	color:$med;
 	font-size:em(11);
 	text-align:center;
-	margin:0 0 5px 0;
+	margin:0 20px 5px;
 	padding:0;
 }
 .svg-import {
