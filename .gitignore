@@ -4,7 +4,7 @@ source/scripts/vendor/
 source/scripts/bower_components/
 source/photos_out/
 node_modules/
-source/sass/partials/bourbon/
+source/sass/bourbon/
 bower_components/
 
 npm-debug.log
