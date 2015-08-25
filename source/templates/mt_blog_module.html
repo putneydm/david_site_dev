@@ -11,13 +11,15 @@
 <p class="blog-entry-date"><mt:EntryDate format="%A, %b %e, %Y"></p>
 <div class="blog-entry-text-index">
 <mt:EntryBody smarty_pants="1">
-	<a href="<mt:entrypermalink>" rel="canonical" class="button blog-more-button">Continue reading	
-		<span aria-hidden="true">
-			<svg class="button-icon">
-			  <use xlink:href="#arrow-right" />
-			</svg>
-		</span>	
-	</a>	
+</div>
+<div class="blog-button-wrapper">
+<a href="<mt:entrypermalink>" rel="canonical" class="button blog-more-button">Continue reading
+	<span aria-hidden="true">
+		<svg class="button-icon">
+			<use xlink:href="#arrow-right" />
+		</svg>
+	</span>
+</a>
 </div>
 </mt:entries>
 <$mt:Include module="blog_entry_teasers"$>
@@ -45,4 +47,3 @@
 </mt:entries>
 </mtIf>
 </div>
-   
