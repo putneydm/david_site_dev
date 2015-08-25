@@ -75,7 +75,7 @@ var pageFunctions = {
   //   initializes stuff
   initJsTest: function () {
     // checks for js and removes no-js tag from body
-    document.getElementsByTagName('BODY')[0].classList.remove('no-js');
+    document.getElementsByTagName('HTML')[0].classList.remove('no-js');
 //    documentBody.className += ' no-js';
   },
   initScrollButton: function (scrollToTopButton){
