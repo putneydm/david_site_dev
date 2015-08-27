@@ -3,6 +3,7 @@ site/
 source/scripts/vendor/
 source/scripts/bower_components/
 source/photos_out/
+source/photos_in/
 node_modules/
 source/sass/bourbon/
 bower_components/
