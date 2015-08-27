@@ -295,6 +295,9 @@ pre {
 	font-size:em(14);
 	color:$med;
 	font-style:italic;
+		a {
+			background-image:none;
+		}
 }
 .embed-container {
 	position: relative;
