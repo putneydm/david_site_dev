@@ -65,7 +65,7 @@ var paths = {
     watch : 'source/sass/**/*.scss'
   },
   images : {
-    input : 'source/photos_in/{*.jpg, *.tiff, *png}',
+    input : 'source/photos_in/{*.jpg, *.tiff, *.png}',
     output : 'source/photos_out/',
     testing : 'site/siteart/',
     dist : 'dist/siteart/'
@@ -160,48 +160,48 @@ gulp.task('bower', function() {
 gulp.task('blog-images', function () {
 
  // x-Large images
-  gulp.src(paths.images.input)
-    .pipe(gm(function (gmfile) {
-      return gmfile.setFormat('jpg'),
-             gmfile.resample(72, 72),
-             gmfile.thumbnail(900, '530!'),
-             gmfile.quality(82),
-             gmfile.filter('triangle'),
-             gmfile.unsharp('0.25x0.25+8+0.065'),
-             gmfile.interlace('none'),
-             gmfile.colorspace('sRGB'),
-             gmfile.crop(900, 530, 0, 0);
-      }, {
-        imageMagick: true
-      }
-    ))
-
-    // Crunches Images
-    .pipe(imagemin({
-      progressive: true,
-      use: [jpegtran()]
-    }))
-
-    // Renames Images
-    .pipe(rename({
-      prefix: 'xlarge_'
-    }))
-
-    .pipe(gulp.dest(paths.images.testing))
-    .pipe(gulp.dest(paths.images.dist));
+  // gulp.src(paths.images.input)
+  //   .pipe(gm(function (gmfile) {
+  //     return gmfile.setFormat('jpg'),
+  //            gmfile.resample(72, 72),
+  //            gmfile.thumbnail(900, '530!'),
+  //            gmfile.quality(82),
+  //            gmfile.filter('triangle'),
+  //            gmfile.unsharp('0.25x0.25+8+0.065'),
+  //            gmfile.interlace('none'),
+  //            gmfile.colorspace('sRGB'),
+  //            gmfile.crop(900, 530, 0, 0);
+  //     }, {
+  //       imageMagick: true
+  //     }
+  //   ))
+  //
+  //   // Crunches Images
+  //   .pipe(imagemin({
+  //     progressive: true,
+  //     use: [jpegtran()]
+  //   }))
+  //
+  //   // Renames Images
+  //   .pipe(rename({
+  //     prefix: 'xlarge_'
+  //   }))
+  //
+  //   .pipe(gulp.dest(paths.images.testing))
+  //   .pipe(gulp.dest(paths.images.dist));
 
   // Large images
   gulp.src(paths.images.input)
     .pipe(gm(function (gmfile) {
          return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(700, '412!'),
+             gmfile.thumbnail(1400, '824!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
              gmfile.colorspace('sRGB'),
-            gmfile.crop(700, 412, 0, 0);
+            gmfile.crop(1400, 824, 0, 0);
       }, {
         imageMagick: true
       }
@@ -226,13 +226,13 @@ gulp.task('blog-images', function () {
     .pipe(gm(function (gmfile) {
          return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(350, '206!'),
+             gmfile.thumbnail(450, '265!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
              gmfile.colorspace('sRGB'),
-             gmfile.crop(350, 206, 0, 0);
+             gmfile.crop(450, 265, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -256,13 +256,13 @@ gulp.task('blog-images', function () {
     .pipe(gm(function (gmfile){
       return gmfile.setFormat('jpg'),
       		 gmfile.resample(72, 72),
-             gmfile.thumbnail(450, '265!'),
+             gmfile.thumbnail(900, '530!'),
              gmfile.quality(82),
              gmfile.filter('triangle'),
              gmfile.unsharp('0.25x0.25+8+0.065'),
              gmfile.interlace('none'),
              gmfile.colorspace('sRGB'),
-             gmfile.crop(450, 265, 0, 0);
+             gmfile.crop(900, 530, 0, 0);
     }, {
       imageMagick: true
     }))
@@ -285,10 +285,6 @@ gulp.task('blog-images', function () {
    .pipe(clean())
    .pipe(gulp.dest(paths.images.output));
 });
-
-
-
-
 
 
 gulp.task('hero', function () {
